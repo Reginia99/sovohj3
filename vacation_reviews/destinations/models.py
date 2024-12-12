@@ -19,6 +19,7 @@ class Review(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
+<<<<<<< HEAD
         return f'{self.user} - {self.rating}/5'
 
 class Picture(models.Model):
@@ -28,3 +29,6 @@ class Picture(models.Model):
 
     def __str__(self):
         return f"Picture for {self.destination.name}"
+=======
+        return f'{self.user.username} for {self.destination.name}'
+>>>>>>> 4c419399 (Project standard commit)
