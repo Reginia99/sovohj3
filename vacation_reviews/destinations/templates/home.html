@@ -1,0 +1,8 @@
+<h1>Vacation Destinations</h1>
+<ul>
+    {% for destination in destinations %}
+        <li>
+            <a href="{{ destination.id }}/">{{ destination.name }}</a> - {{ destination.location }}
+        </li>
+    {% endfor %}
+</ul>
