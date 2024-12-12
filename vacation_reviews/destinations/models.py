@@ -20,3 +20,11 @@ class Review(models.Model):
 
     def __str__(self):
         return f'{self.user} - {self.rating}/5'
+
+class Picture(models.Model):
+    destination = models.ForeignKey(Destination, related_name='pictures', on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='destination_pictures/')
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Picture for {self.destination.name}"
