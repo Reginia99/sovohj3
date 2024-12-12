@@ -130,3 +130,8 @@ LOGIN_URL = '/login/'
 
 LOGIN_REDIRECT_URL = '/'  # Redirect to the home page after login
 LOGOUT_REDIRECT_URL = '/'  # Redirect to the home page after logout
+
+import os
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

@@ -1,4 +1,5 @@
 <h1>Vacation Destinations</h1>
+
 {% if user.is_authenticated %}
     <p>Welcome, {{ user.username }}! 
         <form action="{% url 'logout' %}" method="post">
@@ -9,10 +10,16 @@
 {% else %}
     <p><a href="{% url 'login' %}">Login</a></p>
 {% endif %}
+
 <ul>
     {% for destination in destinations %}
         <li>
-            <a href="{% url 'destination_detail' destination.pk %}">{{ destination.name }}</a>
+            <a href="{% url 'destination_detail' destination.pk %}">{{ destination.name }}</a> - {{ destination.location }}
+            <a href="{% url 'delete_destination' destination.pk %}">
+                <button>Delete</button>
+            </a>
         </li>
     {% endfor %}
 </ul>
+
+<a href="{% url 'add_destination' %}"><button>Add New Destination</button></a>
