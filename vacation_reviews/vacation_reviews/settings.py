@@ -131,7 +131,22 @@ LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'  # Redirect to the home page after login
 LOGOUT_REDIRECT_URL = '/'  # Redirect to the home page after logout
 
+<<<<<<< HEAD
 import os
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+=======
+
+
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = '/static/'  # URL prefix for static files
+
+# Location of the static directory in your project
+STATICFILES_DIRS = [
+    BASE_DIR / "static",  # This points to the static/ directory you created
+]
+
+# Directory to collect static files when running `collectstatic` (for production)
+STATIC_ROOT = BASE_DIR / "staticfiles"
+>>>>>>> 2f642706 (Added night mode and updated login/logout placement)

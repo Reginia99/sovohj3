@@ -1,0 +1,29 @@
+body {
+    background-color: #121212; /* Dark background for night mode */
+    color: white; /* Light text for contrast */
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+a {
+    color: #00aaff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+nav {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    margin-left: 10px;
+}

@@ -1,10 +1,12 @@
+{% load static %} <!-- Add this at the top -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vacation Reviews</title>
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="{% static 'styles.css' %}"> <!-- This stays in the <head> -->
 </head>
 <body>
     <nav style="display: flex; justify-content: space-between; padding: 10px; background-color: #333; color: white;">
