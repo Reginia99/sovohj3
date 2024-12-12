@@ -18,10 +18,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
+from destinations import views as destination_views
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', auth_views.LoginView.as_view(), name='login'),  # Login view
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),  # Logout view
     path('', include('destinations.urls')),  # Include URLs from the destinations app
-]
+    path('add/', destination_views.add_destination, name='add_destination'),
+    path('delete/<int:pk>/', destination_views.delete_destination, name='delete_destination'), 
+    path('destination/<int:pk>/', destination_views.destination_detail, name='destination_detail'),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
