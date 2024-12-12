@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Destination
+from .models import Profile
 from .forms import ReviewForm
 from django.contrib.auth.decorators import login_required
 
