@@ -1,8 +1,18 @@
 <h1>Vacation Destinations</h1>
+{% if user.is_authenticated %}
+    <p>Welcome, {{ user.username }}! 
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+        </form>
+    </p>
+{% else %}
+    <p><a href="{% url 'login' %}">Login</a></p>
+{% endif %}
 <ul>
     {% for destination in destinations %}
         <li>
-            <a href="{{ destination.id }}/">{{ destination.name }}</a> - {{ destination.location }}
+            <a href="{% url 'destination_detail' destination.pk %}">{{ destination.name }}</a>
         </li>
     {% endfor %}
 </ul>
