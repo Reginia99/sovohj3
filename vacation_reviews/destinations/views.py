@@ -35,3 +35,12 @@ def profile_view(request):
     # Example: Get the first profile from the database (you can modify this to fit your needs)
     profile = Profile.objects.first()  # Or filter to get the specific profile you want
     return render(request, 'profile.html', {'profile': profile})
+
+def profile_view(request):
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+    else:
+        form = ProfileForm()
+    return render(request, 'profile.html', {'form': form})
