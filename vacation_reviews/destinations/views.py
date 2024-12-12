@@ -29,3 +29,8 @@ def destination_detail(request, pk):
         'reviews': reviews,
         'form': form,
     })
+
+def profile_view(request):
+    # Example: Get the first profile from the database (you can modify this to fit your needs)
+    profile = Profile.objects.first()  # Or filter to get the specific profile you want
+    return render(request, 'profile.html', {'profile': profile})
