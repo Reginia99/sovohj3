@@ -23,6 +23,8 @@ def destination_detail(request, pk):
     else:
         form = ReviewForm()
 
+    reviews = destination.reviews.all()
+
     return render(request, 'destination_detail.html', {
         'destination': destination,
         'reviews': reviews,

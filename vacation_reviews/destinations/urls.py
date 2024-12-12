@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name='home'),  # Home page for the destinations app
-    path('<int:pk>/', views.destination_detail, name='destination_detail'),  # Detail page
+    path('destination/<int:pk>/', views.destination_detail, name='destination_detail'),  # Detail page
 ]
